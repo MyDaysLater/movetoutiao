@@ -1,0 +1,115 @@
+.tt-m-index .show {
+  display: block;
+}
+.tt-m-index .suck {
+  position: sticky;
+  top: 0px;
+}
+.tt-m-index .suck .tt-m-header {
+  background-color: var(--themeColor);
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  color: white;
+  font-weight: 200;
+}
+.tt-m-index .suck .tt-m-header .iconfont {
+  font-size: 3rem;
+}
+.tt-m-index .suck .tt-m-header .header-title {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.tt-m-index .suck .tt-m-header .header-title .iconfont {
+  font-size: 1.8rem;
+}
+.tt-m-index .suck .tt-m-header .header-search {
+  font-size: 2.5rem;
+}
+.tt-m-index .suck .tt-m-add {
+  height: 3rem;
+  line-height: 3rem;
+  float: right;
+  font-size: 1.9rem;
+  width: 3rem;
+  text-align: center;
+  color: var(--themeColor);
+}
+.tt-m-index .suck .tt-m-nav {
+  background-color: #f4f5f6;
+  height: 3rem;
+}
+.tt-m-index .suck .tt-m-nav .nav-box {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid #ddd;
+}
+.tt-m-index .suck .tt-m-nav .nav-box .nav-left-item {
+  display: inline-block;
+  width: 6rem;
+  font-size: 1.5rem;
+  text-align: center;
+  height: 3rem;
+  line-height: 3rem;
+}
+.tt-m-index .suck .tt-m-nav .nav-box .active {
+  color: var(--themeColor);
+}
+.tt-m-index .suck .tt-m-nav .nav-box::-webkit-scrollbar {
+  display: none;
+}
+.tt-m-index .tt-m-list {
+  overflow-y: scroll;
+}
+.tt-m-index .tt-m-list .list-item {
+  padding: 1rem;
+  border-bottom: 0.1rem solid #ddd;
+  display: block;
+}
+.tt-m-index .tt-m-list .list-item .title {
+  font-size: 1.5rem;
+}
+.tt-m-index .tt-m-list .list-item .date {
+  font-size: 0.5rem;
+  color: #9a9a9a;
+}
+.tt-m-index .tt-m-list .list-item .list-item-box {
+  display: flex;
+}
+.tt-m-index .tt-m-list .list-item .list-item-box .item-img {
+  height: 10rem;
+}
+.tt-m-index .footer-box .footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f5f6;
+  padding: 1rem;
+  width: 100%;
+}
+.tt-m-index .footer-box .footer .footer-left {
+  display: flex;
+  align-items: center;
+  width: 9rem;
+  justify-content: space-between;
+}
+.tt-m-index .footer-box .footer .footer-left .left {
+  background-color: #ca3a47;
+  font-style: italic;
+  color: white;
+}
+.tt-m-index .footer-box .footer .footer-left .right {
+  font-size: 1.3rem;
+}
+.tt-m-index .footer-box .footer .footer-right {
+  width: 5rem;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 1rem;
+}

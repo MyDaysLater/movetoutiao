@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1592382948825'); /* IE9 */
+  src: url('iconfont.eot?t=1592382948825#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOwAAsAAAAAB9QAAANjAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDEIMHATYCJAMQCwoABCAFhG0HSBv5BhEVnIXIfiTGtojzHQ6/ivbRmAkC1JknS0n98SNTKV8AwAlhAqatHZsA2Jxr6tGYCDWSs08efSFth9ml6eD6/VZFrERdvNHL+5jbdBJDiCTxSkiiJ+Kp3ZUcbxi7oCXeDgFYCCQeUV5Z3w4dhblLAGLIwP490TNWVEOjQEdgrjhVIVZgQtcWareA5cHfi5+kCh00TBLzYHO/ij4UfzG+VMgZthldPByy6dwAOwskEA8oEAMqvb2QUTYeiUVdrsgEdHQ0mGqm6EuFzYbkR9Hq1r88EGhIEGbMensA0lFOwhfDEUHAlyIRNPhSUYcE+CDbdcAMTAQuI7K/9IIfkxrsouvmyfaLDs08bBhPnlgfPWr3+HH7p09bRK5s8UFmuBsUq8IgBmViiTbjwGTr8aSnM61K+Mmjdo9s84z2dYsfL265WdR+7eLDm3otemLSZj6lLX5Mm/HoUyc7tjG1dWqthjjFyVjHaK13r6CevQOyxTscXfxdHM/EW3f3789aeeOGXGshD7k1s7Xz27yn1h0wuQv/NW8vbNZOyB8/JFSdwAhWD+fUgKyWXbVYm0Xk3gt6+GC37l+6xl7oW9ynd7Ffqf9qSv0Cc+/errt0jV9S2rtPsW+p/xp8idM/793f4JNq939x/uD49u3jBk8AyEdxyYQh8e3ax0sII7xkSDwp74rz+7n2c/h6Gr6v/7wujX1XYT2d09Z642lGAGB7J3fIYLB9ladkFoC0apf/4yYGXj4Z2d0p/69uPEfXS6d/n4Ko7Z2iu/RnyFTZX5N1bFGawrQppSgdqe5XpN57WgMslgP+VRFceTOF3qNzGgR6RsZAoxUBINEJxytyPJgwSAczOkVgIY6qsw3cGIVEKDsglrkABM4cBw1HLoHEmdt4RX4NJjz5DWachQQLVuF2SYNIAWgvN0YlaEHv0BqanO2QS9j4Rp8GxWlFQP8jxzYBVV7mCy+ckKc4Ii6+FnHgmEZ4grvhMBDMTB0ayYPI3BSFq/qh3NCYXbgxKkELeofW0OS8znIp/P4bfRoUNzRVxf/IsZ0fqrzsgH9pp05Nt/KWuPhaxIFjGuEJ3DhYWYK5el2HRvIwID03BWrnumrz5fXjGx4CLJiPUEITUihh4jg6JLW10zVSion6VOnkD1uryLFkGQA=') format('woff2'),
+  url('iconfont.woff?t=1592382948825') format('woff'),
+  url('iconfont.ttf?t=1592382948825') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1592382948825#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shuaxin:before {
+  content: "\e60b";
+}
+
+.icon-sousuokuang:before {
+  content: "\e63f";
+}
+
+.icon-xiaoxi:before {
+  content: "\e645";
+}
+

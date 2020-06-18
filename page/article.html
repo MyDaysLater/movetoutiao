@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ #title {
+
+}
+
+#content {
+
+}
+
+.list-item-box {
+    height: 10rem;
+}
+#img {
+    height: 100%;
+  }
+    </style>
+</head>
+<body>
+    <section id="title"></section> 
+    <section id="content"></section>
+    <section class="list-item-box">
+    <div id="img">
+        <!-- <img src="" alt=""> -->
+    </div>
+    </section>
+</body>
+<script src="../js/zepto.js"></script>
+<script>
+     Zepto(function(){
+        // 去掉nid
+        let nid = localStorage.getItem("nid");
+        // http://tt.linweiqin.com/api/tt/getArticleById
+        $.ajax({
+            type:"post",
+            data:{
+                nid:nid
+            },
+            url:"http://tt.linweiqin.com/api/tt/getArticleById",
+            dataType:"json",
+            success(data, status, xhr) {
+                let article = data.article;
+                console.log(article);
+                $("#title").html(article.title);
+                $("#content").html(article.created_at);
+                $("#img").append(`
+                    <img src="${article.img}"/>
+                `);
+                // console.log($("#img").append(`
+                //     <img src="${article.img}"/>
+                // `))
+            }
+
+        })
+    })
+</script>
+</html>

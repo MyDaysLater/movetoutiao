@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "504573",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "9557796",
+      "name": "搜索框",
+      "font_class": "sousuokuang",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "10587753",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    }
+  ]
+}

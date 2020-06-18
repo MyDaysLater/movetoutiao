@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>移动端头条</title>
+    <!--  1. 设置视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,
+        maximum-scale=1.0,minimum-scale=1.0
+        ">
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+            box-sizing: border-box;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        html {
+            font-size: 62.5%;
+            --themeColor: #d23f42;
+
+            /* font-size:10%; */
+            /* 
+                基本的单位 rem 1rem = 10px 
+                100vw 整个屏幕的宽度
+                10vw 10%的屏幕的宽度
+                100vh 整个屏幕的高度
+                10vh 10%的屏幕的高度
+                */
+        }
+    </style>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../js/font_rn0tq2ndawb/iconfont.css">
+</head>
+
+<body>
+    <!--移动端主体结构开始 -->
+    <section class="tt-m-index">
+      <section class="suck">
+        <section class="tt-m-header">
+            <section class="header-message iconfont icon-xiaoxi"></section>
+            <section class="header-title">
+                <span>今日头条</span>
+                <span class="iconfont icon-shuaxin"></span>
+            </section>
+            <section class="header-search iconfont icon-sousuokuang"></section>
+        </section>
+        <section class="tt-m-add">
+            +
+        </section>
+        <!-- 分类开始 -->
+        <section class="tt-m-nav">
+            <section class="nav-box">
+                <a class="nav-left-item active">推荐</a>
+                <a class="nav-left-item">科技</a>
+                <a class="nav-left-item">汽车</a>
+                <a class="nav-left-item">体育</a>
+                <a class="nav-left-item">时尚</a>
+                <a class="nav-left-item">养生</a>
+                <a class="nav-left-item">故事</a>
+            </section>
+        </section>
+      
+     </section>
+        <!-- 分类结束 -->
+        <!-- 列表开始 -->
+        <section class="tt-m-list">
+            
+        </section>
+        <!-- 列表结束 -->
+        <!-- footer开始 -->
+        <section class="footer-box">
+        <section class="footer">
+             <section class="footer-left">
+                 <section class="left">头条</section>
+                 <section class="right">今日头条</section>
+             </section>
+             <section class="footer-right">打开</section>
+        </section>
+      </section>
+        <!-- footer结束 -->
+    </section>
+    <!--移动端主体结构结束 -->
+</body>
+<!-- <script src="../js/index.js"></script> -->
+<!-- <script src="../js/axios.js"></script> -->
+<script src="../js/setRem.js"></script>
+<!-- 引入zepot -->
+<script src="../js/zepto.js"></script>
+<script>
+$.ajax({
+    type:"post",
+    url:"http://tt.linweiqin.com/api/tt/getArticles",
+    data:{
+        lastid: 0,
+        page: 0,
+        number: 20
+    },
+    dataType:"json",//设置返回的 dataType 为json,返回的是字符串通过JSON.parse
+    // 解析成对象
+    // 成功回调
+    success(data,status, xhr){
+        let articles = data.articles;
+         console.log(articles)
+         let item_html = articles.map(v=>{
+             if (v.img) {
+                return `
+             <a class="list-item" href="./transfer.html?nid=${v.nid}">
+               <section class="title">${v.title}</section> 
+               <section class="date">${v.created_at}</section>
+               <section class="list-item-box">
+               <img class="item-img" src=${v.img}></img> 
+               </section>
+            </a>
+             `
+             }else{
+                return `
+             <a class="list-item" href="./transfer.html?nid=${v.nid}">
+               <section class="title">${v.title}</section> 
+               <section class="date">${v.created_at}</section>
+               <section class="list-item-box">
+               </section>
+            </a>
+             `
+             }
+         })
+         $('.tt-m-list').append(item_html);
+    },
+    error(xhr,errorType,error){
+        console.log("错误回调");
+    },
+    complete(xhr,status){
+        console.log(status);
+    }
+})
+// 文章列表接口
+
+// page默认0，number 默认20条
+
+// json
+// @url http://tt.linweiqin.com/api/tt/getArticles
+// @method post/get
+// @params lastid,type(可选TT/Article),page,number
+// @return msg,ret,wdata,articles(列表内容),counts(当前页数总文章数),current_page(当前页码)
+// @articles: nid(文章ID),type(文章类型TT/Article),img(首图路径),imgs(头条组图),content(内容),title(标题),uid(用户ID),created_at(创建时间),user(对象:nickname(昵称),avator(头像路径))
+</script>
+</html>
