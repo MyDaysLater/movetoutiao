@@ -90,50 +90,66 @@
 <!-- 引入zepot -->
 <script src="../js/zepto.js"></script>
 <script>
-$.ajax({
-    type:"post",
-    url:"http://tt.linweiqin.com/api/tt/getArticles",
-    data:{
-        lastid: 0,
-        page: 0,
-        number: 20
-    },
-    dataType:"json",//设置返回的 dataType 为json,返回的是字符串通过JSON.parse
-    // 解析成对象
-    // 成功回调
-    success(data,status, xhr){
-        let articles = data.articles;
-         console.log(articles)
-         let item_html = articles.map(v=>{
-             if (v.img) {
-                return `
-             <a class="list-item" href="./transfer.html?nid=${v.nid}">
-               <section class="title">${v.title}</section> 
-               <section class="date">${v.created_at}</section>
-               <section class="list-item-box">
-               <img class="item-img" src=${v.img}></img> 
-               </section>
-            </a>
-             `
-             }else{
-                return `
-             <a class="list-item" href="./transfer.html?nid=${v.nid}">
-               <section class="title">${v.title}</section> 
-               <section class="date">${v.created_at}</section>
-               <section class="list-item-box">
-               </section>
-            </a>
-             `
-             }
-         })
-         $('.tt-m-list').append(item_html);
-    },
-    error(xhr,errorType,error){
-        console.log("错误回调");
-    },
-    complete(xhr,status){
-        console.log(status);
+    let page = 0;
+    function fn(){
+        $.ajax({
+            type:"post",
+            url:"http://tt.linweiqin.com/api/tt/getArticles",
+            data:{
+                lastid: 0,
+                page: page++,
+                number: 20
+            },
+            dataType:"json",//设置返回的 dataType 为json,返回的是字符串通过JSON.parse
+            // 解析成对象
+            // 成功回调
+            success(data,status, xhr){
+                let articles = data.articles;
+                 console.log(articles)
+                 let item_html = articles.map(v=>{
+                     if (v.img) {
+                        return `
+                     <a class="list-item" href="./transfer.html?nid=${v.nid}">
+                       <section class="title">${v.title}</section> 
+                       <section class="date">${v.created_at}</section>
+                       <section class="list-item-box">
+                       <img class="item-img" src=${v.img}></img> 
+                       </section>
+                    </a>
+                     `
+                     }else{
+                        return `
+                     <a class="list-item" href="./transfer.html?nid=${v.nid}">
+                       <section class="title">${v.title}</section> 
+                       <section class="date">${v.created_at}</section>
+                       <section class="list-item-box">
+                       </section>
+                    </a>
+                     `
+                     }
+                 })
+                 $('.tt-m-list').append(item_html);
+            },
+            error(xhr,errorType,error){
+                console.log("错误回调");
+            },
+            complete(xhr,status){
+                console.log(status);
+            }
+        })
     }
+//获取屏幕的高度
+let scrollhegit = document.documentElement.scrollHeight;
+// 获取整个屏幕的移动的高度
+let scrolltop = document.documentElement.scrollTop;
+// 获取整个可视屏幕的宽度
+let clientheight = document.documentElement.clientHeight;
+fn()
+window.addEventListener("scroll",()=>{
+    if(scrollhegit-clientheight === scrolltop){
+        fn()
+    }
+ 
 })
 // 文章列表接口
 

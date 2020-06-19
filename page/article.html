@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
- #title {
 
-}
-
-#content {
-
-}
 
 .list-item-box {
     height: 10rem;
@@ -48,9 +42,12 @@
                 console.log(article);
                 $("#title").html(article.title);
                 $("#content").html(article.created_at);
-                $("#img").append(`
+                if (article.img) {
+                    $("#img").append(`
                     <img src="${article.img}"/>
                 `);
+                }
+              
                 // console.log($("#img").append(`
                 //     <img src="${article.img}"/>
                 // `))
